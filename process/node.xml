@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<taskDefinition id="kinetic_agent_handler_execute" name="Kinetic Agent Handler Ececute" schema_version="1.0" version="1">
+<taskDefinition id="kinetic_agent_handler_execute" name="Kinetic Agent Handler Execute" schema_version="1.0" version="1">
     <author>support@kineticdata.com</author>
     <description>
         Use to call a handler that is loaded into a Kinetic Agent.
@@ -9,14 +9,15 @@
     <deferrable>false</deferrable>
     <parameters>
         <parameter id="error_handling" label="Error Handling" required="true"
-          tooltip="Determine what to return if an error is encountered."
-          menu="Error Message,Raise Error">Error Message</parameter>
+            tooltip="Determine what to return if an error is encountered."
+            menu="Error Message,Raise Error">Error Message</parameter>
         <parameter id="handler_space" label="Handler Space" required="true"
-          tooltip="The name of the space that the handler is defined in"/>
+            tooltip="The name of the space that the handler is defined in"/>
         <parameter id="handler_slug" label="Handler Slug" required="true"
-          tooltip="The name of the handler slug to execute. ex foo_bar"/>
+            tooltip="The name of the handler slug to execute. ex foo_bar"/>
         <parameter id="payload" label="Payload" required="false"
-          tooltip=""/>
+            tooltip="A json structure that matches the handlers parameters.
+            ie {&quot;baz&quot;: &quot;buz&quot;}"/>
     </parameters>
     <handler name="kinetic_agent_handler_execute" version="1">
         <infos>

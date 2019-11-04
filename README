@@ -16,7 +16,7 @@ Starts a handler execution from a Kinetic Agent.
 Error Handling:         Error Message
 Handler Space:          foo
 Handler Slug:           bar
-Payload:                {baz: "buzz"}             
+Payload:                {"baz": "buzz"}             
 
 === Results
 [Handler Error Message]
