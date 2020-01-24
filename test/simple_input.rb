@@ -1,23 +1,17 @@
 {
   'info' => {
-    'api_server' => 'http://localhost:8082/kinetic-bridgehub',
-    'api_username' => 'admin',
-    'api_password' => 'foobar',
+    'api_server' => 'https://e8746da9.ngrok.io/kinetic-agent',
+    'api_username' => '',
+    'api_password' => '',
     'enable_debug_logging'=>'yes'
   },
   'parameters' => {
-    'error_handling' => 'Raise Error',
-    'handler_space' => 'kd-developers',
-    'handler_slug' => 'submission_retrieve',
+    'error_handling' => 'Error Message',
+    'handler_space' => 'emoryhealthcare-pty',
+    'handler_slug' => 'pty_remedy_generic_query_retrieve_v1',
     'payload' => 
-      '{
-        "error_handling": "Raise Error",
-        "space_slug" : "",
-        "retrieve_by" : "Id",
-        "kapp_slug" : "services",
-        "form_slug" : "employee-onboarding",
-        "query" : "",
-        "submission_id" : "ad02d353-3f5e-11e9-badc-09cbd20474c2"
-      }',
+      "{'form' => 'CTM:People',
+      'request_query' => \"1=1\"
+      }",
   }
 }

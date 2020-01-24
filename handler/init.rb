@@ -37,7 +37,8 @@ class KineticAgentHandlerExecuteV1
       resource = RestClient::Resource.new(api_route, { :user => api_username, :password => api_password })
       
       # Post to the API
-      response = resource.post(@parameters['payload'], { :accept => "json", :content_type => "json" })
+      response = resource.post( @parameters['payload'], 
+        { :accept => "application/json", :content_type => "application/json" })
 
       puts "RESULTS: #{response.inspect}" if @enable_debug_logging
       return <<-RESULTS
@@ -48,7 +49,11 @@ class KineticAgentHandlerExecuteV1
       RESULTS
       
     rescue RestClient::Exception => error
-      error_message = "#{error.http_code}: #{JSON.parse(error.response)["error"]}"
+      if !error.response.nil?
+        error_message = "#{error.http_code}: #{error.response}"
+      else
+        error_message = "unexpected error has occurred."
+      end
       raise error_message if error_handling == "Raise Error"
     rescue Exception => error
       error_message = error.inspect
